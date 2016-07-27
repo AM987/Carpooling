@@ -1,10 +1,9 @@
 <%-- 
-    Document   : index
-    Created on : Jul 27, 2016, 11:25:52 AM
-    Author     : lenovo
+    Author     : Toutountzoglou & Alkiviadis
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="javax.servlet.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,7 +14,7 @@
         <h1>Welcome to Carpooling</h1>
         <h3>Please log in with your Uth account</h3>
                 
-        <form action="" method="post"> <!-- method post επειδή στέλνεις sensitive data-->
+        <form action="login_via_LDAP.jsp" method="post"> <!-- method post επειδή στέλνεις sensitive data-->
             Uth Username:<br>
             <input type="text" name="firstname"><br>
             Uth Password:<br>

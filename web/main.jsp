@@ -36,7 +36,32 @@
             <br><br>
             <input type="submit" value="Search">
             <br><br>
-            <h1>or else, καταχώρηση διαδρομής</h1> 
-            <input type="submit" value="Καταχώρησε τώρα!">
+            <h1>or else, καταχώρηση διαδρομής</h1>            
+            
+            <form action= "login_via_LDAP.jsp" method="get">
+            From:<br>    
+            <select name="From_drop_down">       
+                <option value="Athens">Athens</option>
+                <option value="Thessaloniki">Thessaloniki</option>
+                <option value="Patra">Patra</option>
+                <option value="Larisa">Larisa</option>
+                <option value="Volos">Volos</option>
+                <option value="Xanthi">Xanthi</option>
+            </select>
+            <br>
+            To:<br>    
+            <select name="From_drop_down">       
+                <option value="Thessaloniki">Thessaloniki
+                </option><option value="Athens">Athens</option>              
+                <option value="Patra">Patra</option>
+                <option value="Larisa">Larisa</option>
+                <option value="Volos">Volos</option>
+                <option value="Xanthi">Xanthi</option>
+            </select>
+            <br>
+            When:<br>
+            <input type="date" name="when">
+            <br><br>
+            <input type="submit" value="Καταχώρηση Τώρα!">
     </body>
 </html>

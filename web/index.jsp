@@ -14,7 +14,7 @@
         <h1>Welcome to Carpooling</h1>
         <h3>Please log in with your Uth account</h3>
                 
-        <form action="login_via_LDAP.jsp" method="post"> <!-- method post επειδή στέλνεις sensitive data-->
+        <form action="Searching.jsp" method="post"> <!-- method post επειδή στέλνεις sensitive data-->
             Uth Username:<br>
             <input type="text" name="firstname"><br>
             Uth Password:<br>

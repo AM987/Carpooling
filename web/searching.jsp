@@ -9,8 +9,8 @@
     </head>
     <body>
         <%
-            String fromTown=request.getParameter("fromTown_drop_down");
-            String toTown=request.getParameter("toTown_drop_down");
+            String fromTown=request.getParameter("searching_fromTown_drop_down");
+            String toTown=request.getParameter("searching_toTown_drop_down");
              
             Class.forName("com.mysql.jdbc.Driver"); 
             java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ridesharingdatabase","root","stelios"); 
@@ -18,6 +18,10 @@
             ResultSet rs=st.executeQuery("select * from trips"); 
 
         %>
+        <form action="main.jsp">
+            <input type="submit" value="Go back"/>
+        </form>
+        <br><br>
         <table border="1">
             <tbody>
                 <tr>

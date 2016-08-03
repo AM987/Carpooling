@@ -16,7 +16,7 @@
             
             <form action= "searching.jsp" method="get">
             From:<br>    
-            <select name="fromTown_drop_down">       
+            <select name="searching_fromTown_drop_down">       
                 <option value="Athens">Athens</option>
                 <option value="Thessaloniki">Thessaloniki</option>
                 <option value="Patra">Patra</option>
@@ -26,7 +26,7 @@
             </select>
             <br>
             To:<br>    
-            <select name="toTown_drop_down">       
+            <select name="searching_toTown_drop_down">       
                 <option value="Thessaloniki">Thessaloniki
                 <option value="Athens">Athens</option>              
                 <option value="Patra">Patra</option>
@@ -38,10 +38,11 @@
             <input type="submit" value="Search">
             <br><br>
             <h1>or else, καταχώρηση διαδρομής</h1>            
+            </form>
             
-            <form action= "login_via_LDAP.jsp" method="get">
+            <form action= "insertTrip.jsp" method="get">
             From:<br>    
-            <select name="From_drop_down">       
+            <select name="insert_From_drop_down">       
                 <option value="Athens">Athens</option>
                 <option value="Thessaloniki">Thessaloniki</option>
                 <option value="Patra">Patra</option>
@@ -51,7 +52,7 @@
             </select>
             <br>
             To:<br>    
-            <select name="From_drop_down">       
+            <select name="insert_To_drop_down">       
                 <option value="Thessaloniki">Thessaloniki
                 </option><option value="Athens">Athens</option>              
                 <option value="Patra">Patra</option>
@@ -64,5 +65,6 @@
             <input type="date" name="when">
             <br><br>
             <input type="submit" value="Καταχώρηση Τώρα!">
+            </form>
     </body>
 </html>

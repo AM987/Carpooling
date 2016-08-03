@@ -13,9 +13,10 @@
     </head>
     <body>
             <h1>Where do you wanna travel?</h1>            
-            <form action= "login_via_LDAP.jsp" method="get">
+            
+            <form action= "searching.jsp" method="get">
             From:<br>    
-            <select name="From_drop_down">       
+            <select name="fromTown_drop_down">       
                 <option value="Athens">Athens</option>
                 <option value="Thessaloniki">Thessaloniki</option>
                 <option value="Patra">Patra</option>
@@ -25,9 +26,9 @@
             </select>
             <br>
             To:<br>    
-            <select name="From_drop_down">       
+            <select name="toTown_drop_down">       
                 <option value="Thessaloniki">Thessaloniki
-                </option><option value="Athens">Athens</option>              
+                <option value="Athens">Athens</option>              
                 <option value="Patra">Patra</option>
                 <option value="Larisa">Larisa</option>
                 <option value="Volos">Volos</option>

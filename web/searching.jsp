@@ -9,14 +9,20 @@
     </head>
     <body>
         <%
-            String fromTown=request.getParameter("searching_fromTown_drop_down");
-            String toTown=request.getParameter("searching_toTown_drop_down");
+            String fromTown3=request.getParameter("searching_fromTown_drop_down");
+            String toTown3=request.getParameter("searching_toTown_drop_down");
              
             Class.forName("com.mysql.jdbc.Driver"); 
             java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ridesharingdatabase","root","stelios"); 
-            Statement st= con.createStatement(); 
-            ResultSet rs=st.executeQuery("select * from trips"); 
 
+            PreparedStatement myStmt2 = null;
+            ResultSet rs = null;
+            myStmt2 = con.prepareStatement("SELECT tripDate,usrName,email FROM trips WHERE trips.`fromTown` = ? && trips.`toTown` = ?"); 
+            myStmt2.setString(1,fromTown3);
+            myStmt2.setString(2,toTown3);
+            
+            rs = myStmt2.executeQuery();
+            
         %>
         <form action="main.jsp">
             <input type="submit" value="Go back"/>
@@ -24,22 +30,23 @@
         <br><br>
         <table border="1">
             <tbody>
-                <tr>
-                    <td>id</td>
-                    <td>email</td>
-                    <td>fromTown</td>
-                    <td>toTown</td>
+                <tr> 
+                    <td>date</td>
                     <td>name</td>
+                    <td>email</td>
                 </tr>
                 <% while (rs.next()){%>
-                <tr>
-                    <td><%=rs.getInt("id")%></td>
-                    <td><%=rs.getString("email")%></td>
-                    <td><%=rs.getString("fromTown")%></td>
-                    <td><%=rs.getString("toTown")%></td>
+                <tr>       
+                    <td><%=rs.getString("tripDate")%></td>
                     <td><%=rs.getString("usrName")%></td>
+                    <td><%=rs.getString("email")%></td>
                 </tr>
-                <% } %>
+                <% } 
+                    myStmt2.close();
+                    con.close();
+                %>
+                
+                
             </tbody>
         </table>    
     </body>

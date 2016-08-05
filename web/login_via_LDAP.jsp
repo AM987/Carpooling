@@ -18,6 +18,9 @@
             
             Uthldap ldap = new Uthldap(user,pass);
         
+            session.setAttribute( "ldapName", ldap.getName() );
+            session.setAttribute( "ldapEmail", ldap.getMail());
+            
             if(ldap.auth() || user.equals("admin")){  
                 out.println("<html><body>Autheticated Youre name is:" + ldap.getName() + ldap.getMail() +"</body></html>");
                 

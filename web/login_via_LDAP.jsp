@@ -18,12 +18,13 @@
             
             Uthldap ldap = new Uthldap(user,pass);
         
-            if(ldap.auth() || user.equals("admin")){  
+            session.setAttribute( "ldapName", ldap.getName() );
+            session.setAttribute( "ldapEmail", ldap.getMail());
+            
+            if(ldap.auth()){  
                 out.println("<html><body>Autheticated Youre name is:" + ldap.getName() + ldap.getMail() +"</body></html>");
                 
-                %>
-                    <jsp:forward page = "main.jsp" />
-                <%   
+                %><jsp:forward page = "main.jsp" /><%   
             }
             else{
             

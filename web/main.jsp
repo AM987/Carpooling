@@ -1,15 +1,18 @@
 <%-- 
-    Document   : main.jsp
-    Created on : Jul 28, 2016, 7:40:06 PM
-    Author     : lenovo
+    Author     : Toutountzoglou & Alkiviadis
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            body{
+                background-image: url("https://wallpaperscraft.com/image/background_faded_stains_light_47125_1920x1080.jpg");            
+            }   
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        </style>
     </head>
     <body>
             <h1>Where do you wanna travel?</h1>            

@@ -1,11 +1,20 @@
+
+<%-- 
+    Author     : Toutountzoglou & Alkiviadis
+--%>
 <!DOCTYPE html>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import ="java.sql.*"%>
 <%@page import ="javax.sql.*"%>
-<html>
+<html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     </head>
     <body>
         <%
@@ -26,28 +35,20 @@
         %>
         <form action="main.jsp">
             <input type="submit" value="Go back"/>
+            
         </form>
         <br><br>
-        <table border="1">
-            <tbody>
-                <tr> 
-                    <td>date</td>
-                    <td>name</td>
-                    <td>email</td>
-                </tr>
-                <% while (rs.next()){%>
-                <tr>       
-                    <td><%=rs.getString("tripDate")%></td>
-                    <td><%=rs.getString("usrName")%></td>
-                    <td><%=rs.getString("email")%></td>
-                </tr>
-                <% } 
-                    myStmt2.close();
-                    con.close();
-                %>
+     
+   
+        <% while (rs.next()){%>     
+        <div class="panel panel-info">
+            <div class="panel-heading">Date:<%=rs.getString("tripDate")%></div>
+            <div class="panel-body">Name    :<%=rs.getString("usrName")%></div>
+            <div class="panel-footer">Contact Email    : <%=rs.getString("email")%></div>
+        </div>
+         <% } %>   
                 
-                
-            </tbody>
-        </table>    
+        <!-- Latest compiled JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>        
     </body>
 </html>

@@ -27,7 +27,7 @@ public class RegisterServlet extends HttpServlet {
     String reg_fromTown;
     String reg_toTown;
     String reg_Date;
-    int reg_id=0;
+    int reg_id = 0;
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -49,17 +49,15 @@ public class RegisterServlet extends HttpServlet {
         reg_fromTown = request.getParameter("fromTown");
         reg_toTown = request.getParameter("toTown");
         reg_Date = request.getParameter("when");
-        reg_id++;
+        
         
         Register reg = new Register(); 
-        reg.RegisterTrip(reg_id,reg_name, reg_mail, reg_fromTown,reg_toTown, reg_Date);
+        reg.RegisterTrip(reg_id, reg_name, reg_mail, reg_fromTown,reg_toTown, reg_Date);
         
-        
-        
-        
+        RequestDispatcher rd = request.getRequestDispatcher("main.jsp");
+        rd.forward(request, response);
+           
     }
 
-    
-    
 
 }

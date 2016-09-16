@@ -21,9 +21,9 @@ public class Register {
             Connection connection = reg.DbConnection();
             PreparedStatement stmt ;
             
-
+            
             try {
-                stmt = connection.prepareStatement("INSERT INTO registered_trips(id, fullName,email,fromTown,toTown,tripDate) VALUES(?,?,?,?,?,?)");
+                stmt = connection.prepareStatement("INSERT INTO trips(id, usrName,email,fromTown,toTown,tripDate) VALUES(?,?,?,?,?,?)");
                 stmt.setInt(1, id);
                 stmt.setString(2,fullName);
                 stmt.setString(3,email);

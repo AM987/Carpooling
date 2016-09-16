@@ -24,8 +24,9 @@
                 <% while (rs.next()){%>
                 <tr>       
                     <td><%=rs.getString("tripDate")%></td>
-                    <td><%=rs.getString("fullName")%></td>
+                    <td><%=rs.getString("usrName")%></td>
                     <td><%=rs.getString("email")%></td>
+                    
                 </tr>
                 <%}%>
             </tbody>

@@ -54,6 +54,10 @@ public class SearchingServlet extends HttpServlet {
             Search srch = new Search(); 
             rs = srch.SearchTrip(srch_fromTown, srch_toTown, srch_Date);
             
+            if ( rs == null ){
+                RequestDispatcher rd = request.getRequestDispatcher("search_error.jsp");
+                rd.forward(request, response);
+            }
             session.setAttribute("res", rs);
             RequestDispatcher rd = request.getRequestDispatcher("search_result.jsp");
             rd.forward(request, response);

@@ -22,17 +22,33 @@ public class Search {
         PreparedStatement stmt;
         ResultSet rs = null;
         
-        try { 
-            
-                stmt = connection.prepareStatement("SELECT tripDate,fullName,email FROM registered_trips WHERE registered_trips.`fromTown` = ? && registered_trips.`toTown` = ?");
-                stmt.setString(1,fromTown);
-                stmt.setString(2,toTown);
+        try {  
                 
-                rs = stmt.executeQuery();
-            
-            
-            
-            
+                
+                
+                if (fromTown.equals("Anywhere") && !toTown.equals("Anywhere")) {
+                    stmt = connection.prepareStatement("SELECT tripDate,usrName,email FROM trips WHERE trips.`toTown` = ?");
+                    stmt.setString(1,toTown);
+                    rs = stmt.executeQuery();
+                    
+                }
+                else if (toTown.equals("Anywhere") && !fromTown.equals("Anywhere")) {
+                    stmt = connection.prepareStatement("SELECT tripDate,usrName,email FROM trips WHERE trips.`fromTown` = ?");
+                    stmt.setString(1,fromTown);
+                    rs = stmt.executeQuery();
+                }
+                else if (toTown.equals("Anywhere") && fromTown.equals("Anywhere") ) {
+                    stmt = connection.prepareStatement("SELECT tripDate,usrName,email FROM trips ");
+                    rs = stmt.executeQuery();
+                }else {
+                    stmt = connection.prepareStatement("SELECT tripDate,usrName,email FROM trips WHERE trips.`fromTown` = ? && trips.`toTown` = ?");
+                    stmt.setString(1,fromTown);
+                    stmt.setString(2,toTown);
+                    rs = stmt.executeQuery();
+                }
+                
+                    
+               
         }catch (SQLException ex) {
             Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
         }
